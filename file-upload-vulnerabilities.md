@@ -33,4 +33,31 @@ TIP: The `Content-Type` response header provides the information on the type of 
   For an IIS server we can create a similar conf file by naming it as `web.config`.
   ```
 
+  - For example: If the application blacklists php files from uploading. We can upload a `.htaccess` file that has mapping to our file extension to php. 
   
+    Contents of our `.htaccess` file can be `AddType application/x-httpd-php .php5`
+  
+    This let's the `mod_php` module on the server to execute any `.php5` file as `.php`.
+  
+  - Once, our `.htaccess` file is successfully uploaded we can upload files with `.php5` extension.
+  
+- ##### Bypasssing blacklisting filters
+
+  - There are multiple ways to by passing blacklisted file extensions. One way would be appending a valid file extension to the end of the file name. Example `malicious.php.jpeg`. Backend server may interpret this as a php or image file. 
+  - (Single/Double) URL encoding dots, slashes in the file name. Ex: `malicious%2Ephp`
+  - Appending semicolons or null bytes to the file name.
+    - Example: `malicious.php%00jpeg` or `malicious.php;.jpeg`.
+  - Try using multibyte unicode characters which may be converted to null bytes or dots after unicode conversion. 
+  - If the backend application is stripping dangerous file extensions but not doing it recursively we can do something like `malicious.p.phphp`
+
+- ##### Bypassing file content validations
+
+  - Although, some backend applications actually look at the file contents to validate if it matches with an image we can bypass this by making use of some advanced tools. 
+
+  - From the kali machine use the following command:
+
+    ```shell
+    exiftool -Comment="<?php echo 'START' . file_get_contents('/path/to/secret') . 'END'; ?>" <INPUT-IMAGE>.jpg -o polygot.php
+    ```
+
+    
