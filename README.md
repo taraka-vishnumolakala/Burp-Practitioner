@@ -1,1 +1,1 @@
-# PortSwigger-Web-Security-Academy
+# Burp Practitioner Preparation
