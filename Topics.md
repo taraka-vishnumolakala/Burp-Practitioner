@@ -1,19 +1,24 @@
 ### Server Side Topics
-- [ ] SQL Injection
-- [ ] Authentication vulnerabilities
-- [ ] Directory traversal
-- [ ] OS Command Injection
-- [ ] Business logic vulnerabilities
-- [ ] Information disclosure vulnerabilities
-- [ ] Access control vulnerabilities and privilege escalation
-- [ ] File upload vulnerabilities
-- [ ] Server side request forgery
-- [ ] XML external entity injection
-
-| Topic                       | Lab-Name | Level | Repeat | Link                                                      |
-| --------------------------- | -------- | ----- | ------ | --------------------------------------------------------- |
-| File upload vulnerabilities |          |       |        | [test](/Server-Side-Topics/file-upload-vulnerabilites.md) |
-|                             |          |       |        |                                                           |
+| #   | Topic                          | Total Labs | Level        | Lab Name | Repeat | Link |
+| --- | ------------------------------ | ---------- | ------------ | -------- | ------ | ---- |
+| 1   | SQL Injection                  | 16         | APPRENTICE   |          |        |      |
+|     |                                |            | APPRENTICE   |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+|     |                                |            | PRACTITIONER |          |        |      |
+| 2   | Authentication                 | 14         |              |          |        |      |
+| 3   | Directory Traversal            | 6          |              |          |        |      |
+| 4   | Command Injection              | 5          |              |          |        |      |
+| 5   | Business logic vulnerabilities | 11         |              |          |        |      |
+| 6   | Information Disclosure         | 5          |              |          |        |      |
+| 7   | Access Control                 | 13         |              |          |        |      |
+| 8   | File Upload Vulnerabilities    | 7          |              |          |        |      |
+| 9   | SSRF                           | 7          |              |          |        |      |
+| 10  | XXE Injection                  | 9          |              |          |        |      |
 
 ### Client Side Topics
 
