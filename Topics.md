@@ -1,24 +1,16 @@
 ### Server Side Topics
-| #   | Topic                          | Total Labs | Level        | Lab Name | Repeat | Link |
-| --- | ------------------------------ | ---------- | ------------ | -------- | ------ | ---- |
-| 1   | SQL Injection                  | 16         | APPRENTICE   |          |        |      |
-|     |                                |            | APPRENTICE   |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-|     |                                |            | PRACTITIONER |          |        |      |
-| 2   | Authentication                 | 14         |              |          |        |      |
-| 3   | Directory Traversal            | 6          |              |          |        |      |
-| 4   | Command Injection              | 5          |              |          |        |      |
-| 5   | Business logic vulnerabilities | 11         |              |          |        |      |
-| 6   | Information Disclosure         | 5          |              |          |        |      |
-| 7   | Access Control                 | 13         |              |          |        |      |
-| 8   | File Upload Vulnerabilities    | 7          |              |          |        |      |
-| 9   | SSRF                           | 7          |              |          |        |      |
-| 10  | XXE Injection                  | 9          |              |          |        |      |
+| #   | Topic                          | Total Labs | 
+| --- | ------------------------------ | ---------- | 
+| 1   | SQL Injection                  | 16         | 
+| 2   | Authentication                 | 14         | 
+| 3   | Directory Traversal            | 6          | 
+| 4   | Command Injection              | 5          |
+| 5   | Business logic vulnerabilities | 11         |
+| 6   | Information Disclosure         | 5          |
+| 7   | Access Control                 | 13         |
+| 8   | File Upload Vulnerabilities    | 7          |
+| 9   | SSRF                           | 7          |
+| 10  | XXE Injection                  | 9          |
 
 ### Client Side Topics
 
