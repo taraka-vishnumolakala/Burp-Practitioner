@@ -26,7 +26,7 @@
 ### JWT vs JWE vs JWS
 1. The JWT specification is actually very limited. It only defines a format for representing information ("claims") as a JSON object that can be transferred between two parties. 
 2. In practice, JWTs aren't really used as a standalone entity. The JWT spec is extended by both the JSON Web Signature (JWS) and JSON Web Encryption (JWE) specifications, which define concrete ways of actually implementing JWTs.
-![[0c3b52ffea9b0339ff2d2fae682a4bca.jpg]]
+![[./Images/0c3b52ffea9b0339ff2d2fae682a4bca.jpg]]
 3. In other words, a JWT is usually either a JWS or JWE token. When people use the term "JWT", they almost always mean a JWS token. JWEs are very similar, except that the actual contents of the token are encrypted rather than just encoded.
 
 ## Labs
@@ -46,7 +46,7 @@ To solve the lab, modify your session token to gain access to the admin panel at
 {"iss":"portswigger","sub":"administrator","exp":1682077970}
 ```
 
-![[6b6c449e6c5129cc27f2ed3778a1726e.png]]
+![[./Images/6b6c449e6c5129cc27f2ed3778a1726e.png]]
 3. With the response we see a reference to delete user **carlos**
 4. Send another GET request to delete user carlos as admin and we have now completed the lab. 
 #### Insecure Code:
