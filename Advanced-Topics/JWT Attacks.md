@@ -45,7 +45,6 @@ To solve the lab, modify your session token to gain access to the admin panel at
 ```json
 {"iss":"portswigger","sub":"administrator","exp":1682077970}
 ```
-
 ![](./Images/6b6c449e6c5129cc27f2ed3778a1726e.png)
 3. With the response we see a reference to delete user **carlos**
 4. Send another GET request to delete user carlos as admin and we have now completed the lab. 
