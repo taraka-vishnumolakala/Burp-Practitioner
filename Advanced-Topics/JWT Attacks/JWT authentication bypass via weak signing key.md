@@ -1,3 +1,6 @@
+
+## JWT authentication bypass via weak signing key
+
 ### Objective:
 To solve the lab, first brute-force the website's secret key. Once you've obtained this, use it to sign a modified session token that gives you access to the admin panel at `/admin`, then delete the user `carlos`.
 

@@ -1,3 +1,6 @@
+
+## JWT authentication bypass via jwk header injection
+
 ### Objective:
 To solve the lab, modify and sign a JWT that gives you access to the admin panel at `/admin`, then delete the user `carlos`.
 

@@ -1,3 +1,6 @@
+
+## JWT authentication bypass via flawed signature verification
+
 ### Objective:
 To solve the lab, modify your session token to gain access to the admin panel at `/admin`, then delete the user `carlos`.
 
