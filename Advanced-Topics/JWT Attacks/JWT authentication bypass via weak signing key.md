@@ -13,7 +13,7 @@ To solve the lab, first brute-force the website's secret key. Once you've obtain
 ```bash
 hashcat -a 0 -m 16500 jwt.txt jwt.secrets.list
 ```
-![](a23b1981ba58a6f7e1da426b987108f7.png)
+![](./Images/a23b1981ba58a6f7e1da426b987108f7.png)
 6. Base64 encode the brute forced secret. 
 7. In burp under *Extensions --> BApp Store* install *JWT Editor*
 8. Open *JWT Editor Keys* and select *New Symmetric Key*. 
