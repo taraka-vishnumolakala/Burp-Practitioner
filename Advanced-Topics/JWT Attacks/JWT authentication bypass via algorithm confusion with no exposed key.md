@@ -46,5 +46,59 @@ Server uses a robust RSA key pair to sign and verify tokens. However, due to imp
 8.  In the response, find the URL for deleting Carlos (`/admin/delete?username=carlos`). Send the request to this endpoint to solve the lab.
 
 ### Insecure Code:
+In this example, the `algorithms` option is not specified, which means that the signature can be verified using any algorithm. This makes the code vulnerable to algorithm confusion attacks, as an attacker can modify the `alg` header to use a different algorithm and sign the token using the corresponding public key.
+```javascript
+const jwt = require('jsonwebtoken');
+const jwksClient = require('jwks-rsa');
+
+function verifyJWT(token) {
+  const decoded = jwt.decode(token, { complete: true });
+  const header = decoded.header;
+  const kid = header.kid;
+
+  const client = jwksClient({
+    jwksUri: 'https://example.com/.well-known/jwks.json'
+  });
+
+  function getKey(header, callback) {
+    client.getSigningKey(header.kid, function(err, key) {
+      const signingKey = key.publicKey || key.rsaPublicKey;
+      callback(null, signingKey);
+    });
+  }
+
+  jwt.verify(token, getKey);
+  return true;
+}
+```
 
 ### Secure Code:
+In this example, we use the `algorithms` option to specify that the signature should be verified using the RS256 algorithm. This ensures that the signature is verified using the correct algorithm, even if the `alg` header is modified.
+```javascript
+const jwt = require('jsonwebtoken');
+const jwksClient = require('jwks-rsa');
+
+function verifyJWT(token) {
+  const decoded = jwt.decode(token, { complete: true });
+  const header = decoded.header;
+  const kid = header.kid;
+
+  const client = jwksClient({
+    jwksUri: 'https://example.com/.well-known/jwks.json'
+  });
+
+  function getKey(header, callback) {
+    client.getSigningKey(header.kid, function(err, key) {
+      const signingKey = key.publicKey || key.rsaPublicKey;
+      callback(null, signingKey);
+    });
+  }
+
+  const options = {
+    algorithms: ['RS256'] // specify the algorithm for verifying the signature
+  };
+  
+  jwt.verify(token, getKey, options);
+  return true;
+}
+```

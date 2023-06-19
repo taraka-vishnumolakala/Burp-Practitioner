@@ -1,26 +1,16 @@
 
-- [[#Labs|Labs]]
-- [[#Introduction|Introduction]]
-	- [[#Introduction#JWT vs JWE vs JWS|JWT vs JWE vs JWS]]
-	- [[#Introduction#JWT header parameter injections|JWT header parameter injections]]
-	- [[#Introduction#Authentication bypass via kid header path traversal|Authentication bypass via kid header path traversal]]
-	- [[#Introduction#Other intersting header parameters|Other intersting header parameters]]
-	- [[#Introduction#Algorithm Confusion Attacks|Algorithm Confusion Attacks]]
-		- [[#Algorithm Confusion Attacks#How do algorithm confusion vulnerabilities arise?|How do algorithm confusion vulnerabilities arise?]]
-		- [[#Algorithm Confusion Attacks#Deriving public keys from existing tokens|Deriving public keys from existing tokens]]
-
-
 ## Labs
-| #    | Lab Name                                                              | Level        |  
-| ---- | --------------------------------------------------------------------- | ------------ | 
-| 1 ✅ | [JWT authentication bypass via unverified signature](JWT%20authentication%20bypass%20via%20unverified%20signature.md)                    | APPRENTICE   | 
-| 2 ✅ | [JWT authentication bypass via flawed signature verification](JWT%20authentication%20bypass%20via%20flawed%20signature%20verification.md)           | APPRENTICE   |      
-| 3 ✅ | [JWT authentication bypass via weak signing key](JWT%20authentication%20bypass%20via%20weak%20signing%20key.md)                        | PRACTITIONER |     
-| 4 ✅   | [JWT authentication bypass via jwk header injection](JWT%20authentication%20bypass%20via%20jwk%20header%20injection.md)                    | PRACTITIONER |     
-| 5 ✅   | [JWT authentication bypass via jku header injection](JWT%20authentication%20bypass%20via%20jku%20header%20injection.md)                    | PRACTITIONER |    
-| 6 ✅   | [JWT authentication bypass via kid header path traversal](JWT%20authentication%20bypass%20via%20kid%20header%20path%20traversal.md)               | PRACTITIONER |      
-| 7 ✅   | [JWT authentication bypass via algorithm confusion](JWT%20authentication%20bypass%20via%20algorithm%20confusion.md)                     | EXPERT       |     
-| 8    | [JWT authentication bypass via algorithm confusion with no exposed key](JWT%20authentication%20bypass%20via%20algorithm%20confusion%20with%20no%20exposed%20key.md) | EXPERT       |     
+
+| #    | Lab Name                                                                                                                                                            | Level        |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1 ✅ | [JWT authentication bypass via unverified signature](JWT%20authentication%20bypass%20via%20unverified%20signature.md)                                               | APPRENTICE   |
+| 2 ✅ | [JWT authentication bypass via flawed signature verification](JWT%20authentication%20bypass%20via%20flawed%20signature%20verification.md)                           | APPRENTICE   |
+| 3 ✅ | [JWT authentication bypass via weak signing key](JWT%20authentication%20bypass%20via%20weak%20signing%20key.md)                                                     | PRACTITIONER |
+| 4 ✅ | [JWT authentication bypass via jwk header injection](JWT%20authentication%20bypass%20via%20jwk%20header%20injection.md)                                             | PRACTITIONER |
+| 5 ✅ | [JWT authentication bypass via jku header injection](JWT%20authentication%20bypass%20via%20jku%20header%20injection.md)                                             | PRACTITIONER |
+| 6 ✅ | [JWT authentication bypass via kid header path traversal](JWT%20authentication%20bypass%20via%20kid%20header%20path%20traversal.md)                                 | PRACTITIONER |
+| 7 ✅ | [JWT authentication bypass via algorithm confusion](JWT%20authentication%20bypass%20via%20algorithm%20confusion.md)                                                 | EXPERT       |
+| 8    | [JWT authentication bypass via algorithm confusion with no exposed key](JWT%20authentication%20bypass%20via%20algorithm%20confusion%20with%20no%20exposed%20key.md) | EXPERT       |
 
 ## Introduction
 1. Structure of JWT
@@ -30,7 +20,8 @@
 		1. contains actual "claims" about the user
 	3. signature
 		1. server that issues the token typically generates the signature by hashing **header** and **payload** 
-> Note: In most cases, this data can be easily read or modified by anyone with access to the token. Therefore, the security of any JWT-based mechanism is heavily reliant on the cryptographic signature.
+> **🗒️Note**
+>  In most cases, this data can be easily read or modified by anyone with access to the token. Therefore, the security of any JWT-based mechanism is heavily reliant on the cryptographic signature.
 
 2. The process of generating a signature involves a secret signing key. 
 3. This whole process provides a way for servers to verify that none of the data within the token has been tampered with since it was issued.
@@ -97,7 +88,8 @@ verify(token, publicKey);
 ```
 6. In this case, if the server receives a token signed using a symmetric algorithm like HS256, the library's generic `verify()` method will treat the public key as an HMAC secret. 
 7. This means that an attacker could sign the token using HS256 and the public key, and the server will use the same public key to verify the signature.
-> **Note: The public key you use to sign the token must be absolutely identical to the public key stored on the server. This includes using the same format (such as X.509 PEM) and preserving any non-printing characters like newlines. In practice, you may need to experiment with different formatting in order for this attack to work.**
+> **🗒️ Note** 
+> The public key you use to sign the token must be absolutely identical to the public key stored on the server. This includes using the same format (such as X.509 PEM) and preserving any non-printing characters like newlines. In practice, you may need to experiment with different formatting in order for this attack to work.
 
 #### Deriving public keys from existing tokens
 

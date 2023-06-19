@@ -21,8 +21,9 @@ To solve the lab, forge a JWT that gives you access to the admin panel at `/adm
 ##### Modify and sign the JWT
 1.  Go back to the `GET /admin` request in Burp Repeater and switch to the extension-generated **JSON Web Token** message editor tab.
 2.  In the header of the JWT, change the value of the `kid` parameter to a **path traversal** sequence pointing to the `/dev/null` file: `../../../../../../../dev/null`
-> **Note: In this solution, we'll point the `kid` parameter to the standard file `/dev/null`. In practice, you can point the `kid` parameter to any file with predictable contents.
-> If the server stores its verification keys in a database, the `kid` header parameter is also a potential vector for SQL Injection attacks.**
+> **🗒️ Note** 
+> In this solution, we'll point the `kid` parameter to the standard file `/dev/null`. In practice, you can point the `kid` parameter to any file with predictable contents.
+> If the server stores its verification keys in a database, the `kid` header parameter is also a potential vector for SQL Injection attacks.
 1.  In the JWT payload, change the value of the `sub` claim to `administrator`.
 2.  At the bottom of the tab, click **Sign**, then select the symmetric key that you generated in the previous section.
 3.  Make sure that the **Don't modify header** option is selected, then click **OK**. The modified token is now signed using a null byte as the secret key.

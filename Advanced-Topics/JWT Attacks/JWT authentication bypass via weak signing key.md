@@ -20,7 +20,7 @@ hashcat -a 0 -m 16500 jwt.txt jwt.secrets.list
 6. Base64 encode the brute forced secret. 
 7. In burp under *Extensions --> BApp Store* install *JWT Editor*
 8. Open *JWT Editor Keys* and select *New Symmetric Key*. 
-> **Note that you don't need to select a key size as this will automatically be updated later.**
+> **🗒️ Note** You don't need to select a key size as this will automatically be updated later.
 1. Replace the value of "k" with base64 encoded secret.
 2. Go back to Repeater and select *JSON Web Token* tab. 
 3. In the payload, change the value of the `sub` claim to `administrator`
