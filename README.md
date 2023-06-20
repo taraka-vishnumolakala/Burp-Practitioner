@@ -22,7 +22,7 @@ This is my preparation guide for burp practitioner exam.
 
 | #   | Topic                         | Total Labs     | Apprentice | Practitioner | Expert |
 | --- | ----------------------------- | -------------- | ---------- | ------------ | ------ |
-| 11  | Cross-site scripting          | 30   ❗️❗️❗️ | 9          | 15           | 6      |
+| 11  | [Cross-site scripting](Client-Side-Topics/Cross-site%20scripting/README.md)          | 30   ❗️❗️❗️ | 9          | 15           | 6      |
 | 12  | Cross-site request forgery    | 12     ❗️     | 1          | 11           | N/A    |
 | 13  | Cross-origin resource sharing | 4              | 2          | 1            | 1      |
 | 14  | Clickjacking                  | 5              | 3          | 2            | N/A    |
