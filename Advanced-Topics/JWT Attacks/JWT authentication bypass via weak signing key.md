@@ -8,7 +8,7 @@ To solve the lab, first brute-force the website's secret key. Once you've obtain
 1. Secret key used for signing can be easily guessed or brute forced.
 
 ### Exploitation Methodology:
-1. 1. Turn on burp to proxy all requests and login to the portal. 
+1. Turn on burp to proxy all requests and login to the portal. 
 2. Under *Proxy --> Http history* take a look at the requests and send the */my-account* request to repeater.
 3. Grab the jwt token from *Cookie: session=* and copy the content to a file. Name the *jwt.txt*
 4. Open terminal and install hashcat. Download a copy of well-known and most commonly used jwt secrets list from a known source. [jwt.secrets.list](https://raw.githubusercontent.com/wallarm/jwt-secrets/master/jwt.secrets.list)
