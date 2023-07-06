@@ -4,6 +4,10 @@ This is my preparation guide for burp practitioner exam.
 # TOPICS
 
 ## Server Side Topics
+Total Labs: 93
+	Apprentice: 30
+	Practitioner: 57
+	Expert: 6
 
 | #    | Topic                          | Total Labs | Apprentice | Practitioner | Expert |
 | ---- | ------------------------------ | ---------- | ---------- | ------------ | ------ |
@@ -19,6 +23,10 @@ This is my preparation guide for burp practitioner exam.
 | 10   | XXE Injection                  | 9          | 2          | 6            | 1      |
 
 ## Client Side Topics
+Total Labs: 61
+	Apprentice: 16
+	Practitioner: 36
+	Expert: 9
 
 | #   | Topic                         | Total Labs     | Apprentice | Practitioner | Expert |
 | --- | ----------------------------- | -------------- | ---------- | ------------ | ------ |
@@ -30,17 +38,22 @@ This is my preparation guide for burp practitioner exam.
 | 16  | WebSockets                    | 3              | 1          | 2            | N/A    |
 
 ## Advanced Topics
+Total Labs: 89
+	Apprentice: 7
+	Practitioner: 61
+	Expert: 21
 
-| #     | Topic                          | Total Labs  | Apprentice | Practitioner | Expert |
-| ----- | ------------------------------ | ----------- | ---------- | ------------ | ------ |
-| 17    | Insecure Deserialization       | 10   ❗️    | 1          | 6            | 3      |
-| 18    | Server-side template injection | 7           | N/A        | 5            | 2      |
-| 19    | Web Cache poisoning            | 13   ❗️    | N/A        | 9            | 4      |
-| 20    | HTTP Host header attacks       | 7           | 2          | 4            | 1      |
-| 21    | HTTP request smuggling         | 22   ❗️❗️ | N/A        | 15           | 7      |
-| 22    | OAuth authentication           | 6           | 1          | 4            | 1      |
-| 23 ✅ | [JWT attacks](Advanced-Topics/JWT%20Attacks/README.md)                    | 8           | 2          | 4            | 2      |
-| 24    | [Prototype pollution](Advanced-Topics/Prototype%20Pollution/README.md)            | 10   ❗️    | N/A        | 9            | 1      |
-| 25    | Essential skills               | 1           | N/A        | 1            | N/A       |
+| #     | Topic                                                                  | Total Labs  | Apprentice | Practitioner | Expert |
+| ----- | ---------------------------------------------------------------------- | ----------- | ---------- | ------------ | ------ |
+| 17    | Insecure Deserialization                                               | 10   ❗️    | 1          | 6            | 3      |
+| 18    | Server-side template injection                                         | 7           | N/A        | 5            | 2      |
+| 19    | Web Cache poisoning                                                    | 13   ❗️    | N/A        | 9            | 4      |
+| 20    | HTTP Host header attacks                                               | 7           | 2          | 4            | 1      |
+| 21    | HTTP request smuggling                                                 | 22   ❗️❗️ | N/A        | 15           | 7      |
+| 22    | OAuth authentication                                                   | 6           | 1          | 4            | 1      |
+| 23 ✅ | [JWT attacks](Advanced-Topics/JWT%20Attacks/README.md)                 | 8           | 2          | 4            | 2      |
+| 24    | [Prototype pollution](Advanced-Topics/Prototype%20Pollution/README.md) | 10   ❗️    | N/A        | 9            | 1      |
+| 25    | GraphQL API vulnerabilities                                            | 5           | 1          | 4            | N/A       |
+| 26    | Essential skills                                                       | 1           | N/A        | 1            | N/A    |
 
 
