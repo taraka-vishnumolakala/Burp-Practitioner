@@ -7,9 +7,9 @@ DOM XSS typically occurs when data from attcker-controllable source is passed to
 | 3 ✅  | [DOM XSS in innerHTML sink using source location.search](DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20location.search.md)                              | APPRENTICE   | DOM  |
 | 4 ✅  | [DOM XSS in jQuery anchor href attribute sink using location.search source](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20location.search%20source.md)           | APPRENTICE   | DOM  |
 | 5 ✅  | [DOM XSS in jQuery selector sink using a hashchange event](DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event.md)                            | APPRENTICE   | DOM  |
-| 6   | DOM XSS in AngularJS expression with angle brackets and doubt quotes HTML-encoded   | PRACTITIONER | DOM  |
-| 7   | Reflected DOM XSS                                                                   | PRACTITIONER | DOM  |
-| 8   | Stored DOM XSS                                                                      | PRACTITIONER | DOM  | 
+| 6 ✅  | [DOM XSS in AngularJS expression with angle brackets and doubt quotes HTML-encoded](DOM%20XSS%20in%20AngularJS%20expression%20with%20angle%20brackets%20and%20doubt%20quotes%20HTML-encoded.md)   | PRACTITIONER | DOM  |
+| 7 ✅  | [Reflected DOM XSS](Reflected%20DOM%20XSS.md)                                                                   | PRACTITIONER | DOM  |
+| 8 ✅  | [Stored DOM XSS](Stored%20DOM%20XSS.md)                                                                      | PRACTITIONER | DOM  | 
 
 ## Testing for DOM XSS
 
@@ -65,3 +65,14 @@ $(window).on('hashchange', function() {
 ```html
 <iframe src="https://vulnerable-website.com#" onload="this.src+='<img src=1 onerror=alert(1)>'">
 ```
+
+#### DOM XSS in AngularJS
+- When a site uses **`np-app`** attribute on HTML element, AngularJS will process any JavaScript inside the double curly braces. 
+
+## DOM XSS combined with reflected and stored data
+- In a reflected DOM XSS, the server processes data from the request, and echoes the data into the response. 
+	- This reflected data might be places into a JavaScript string literal, or data item within the DOM, such as a form field. 
+	- Now, if a script on the page processes the reflected data in an unsafe way, ultimately writing it to a dangerous sink leads to a XSS exploit. 
+	- For example: **eval('var data = "reflected string"');**
+- In a stored DOM XSS, server receives data from one request, stores it, and then includes the data in a later response. 
+	- For example: **element.innerHTML = comment.author**
