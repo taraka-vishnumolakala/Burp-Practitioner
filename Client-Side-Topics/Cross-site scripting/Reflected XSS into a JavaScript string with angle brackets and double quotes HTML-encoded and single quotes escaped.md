@@ -1,4 +1,4 @@
-## Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escape
+## Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped
 
 ### Objective:
 - This lab contains a reflected cross-site scripting vulnerability in the search query tracking functionality where angle brackets are HTML encoded and single quotes are escaped.

@@ -1,4 +1,4 @@
-## Store XSS into anchor href attribute with double quotes HTML-encoded
+## Stored XSS into anchor href attribute with double quotes HTML-encoded
 
 ### Objective:
 - This lab contains a stored cross-site scripting vulnerability in the comment functionality. 

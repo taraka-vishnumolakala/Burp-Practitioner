@@ -1,4 +1,4 @@
-## Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks unicode-escaped
+## Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped
 
 ### Objective:
 - This lab contains a reflected cross-site scripting vulnerability in the search blog functionality. 

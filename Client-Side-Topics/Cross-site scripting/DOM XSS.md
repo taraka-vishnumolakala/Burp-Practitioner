@@ -8,7 +8,7 @@
 | 3 ✅  | [DOM XSS in innerHTML sink using source location.search](DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20location.search.md)                              | APPRENTICE   | DOM  |
 | 4 ✅  | [DOM XSS in jQuery anchor href attribute sink using location.search source](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20location.search%20source.md)           | APPRENTICE   | DOM  |
 | 5 ✅  | [DOM XSS in jQuery selector sink using a hashchange event](DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event.md)                            | APPRENTICE   | DOM  |
-| 6 ✅  | [DOM XSS in AngularJS expression with angle brackets and doubt quotes HTML-encoded](DOM%20XSS%20in%20AngularJS%20expression%20with%20angle%20brackets%20and%20doubt%20quotes%20HTML-encoded.md)   | PRACTITIONER | DOM  |
+| 6 ✅  | [DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded](DOM%20XSS%20in%20AngularJS%20expression%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded.md)   | PRACTITIONER | DOM  |
 | 7 ✅  | [Reflected DOM XSS](Reflected%20DOM%20XSS.md)                                                                   | PRACTITIONER | DOM  |
 | 8 ✅  | [Stored DOM XSS](Stored%20DOM%20XSS.md)                                                                      | PRACTITIONER | DOM  | 
 

@@ -1,5 +1,39 @@
-
 # Cross-site scripting (XSS)
+
+## Labs
+
+| #    | Lab Name                                                                                                                                                                                              | Level      | XSS Type  |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------- |
+| 1 ✅ | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md)                                                 | APPRENTICE | Reflected |
+| 2 ✅ | [Stored XSS into HTML context with nothing encoded](Stored%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md)                                                       | APPRENTICE | Stored    |
+| 3 ✅ | [DOM XSS in document.write sink using source location.search](DOM%20XSS%20in%20document.write%20sink%20using%20source%20location.search.md)                                   | APPRENTICE | DOM       |
+| 4 ✅ | [DOM XSS in innerHTML sink using source location.search](DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20location.search.md)                                             | APPRENTICE | DOM       |
+| 5 ✅ | [DOM XSS in jQuery anchor href attribute sink using location.search source](DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20location.search%20source.md) | APPRENTICE | DOM       |
+| 6 ✅ | [DOM XSS in jQuery selector sink using a hashchange event](DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event.md)                                     | APPRENTICE | DOM       |
+| 7 ✅ | [Reflected XSS into a JavaScript string with angle brackets HTML encoded](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20HTML%20encoded.md)                               | APPRENTICE | Reflected |
+| 8 ✅ | [Stored XSS into anchor href attribute with double quotes HTML-encoded](Stored%20XSS%20into%20anchor%20href%20attribute%20with%20double%20quotes%20HTML-encoded.md)           | APPRENTICE | Stored    |
+| 9 ✅ | [Reflected XSS into a JavaScript string with angle brackets HTML encoded](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20HTML%20encoded.md)     | APPRENTICE | Reflected |
+| 10 ✅  | [DOM XSS in document.write sink using source location.search inside a select element](DOM%20XSS%20in%20document.write%20sink%20using%20source%20location.search%20inside%20a%20select%20element.md)                                                           | PRACTITIONER | DOM       |
+| 11 ✅  | [DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded](DOM%20XSS%20in%20AngularJS%20expression%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded.md)                                                             | PRACTITIONER | DOM       |
+| 12 ✅  | [Reflected DOM XSS](Reflected%20DOM%20XSS.md)                                                                                                                                                                                                                 | PRACTITIONER | Reflected |
+| 13 ✅  | [Stored DOM XSS](Stored%20DOM%20XSS.md)                                                                                                                                                                                                                       | PRACTITIONER | Stored    |
+| 14 ✅  | [Reflected XSS into HTML context with most tags and attributes blocked](Reflected%20XSS%20into%20HTML%20context%20with%20most%20tags%20and%20attributes%20blocked.md)                                                                                         | PRACTITIONER | Reflected |
+| 15 ✅  | [Reflected XSS into HTML context with all tags blocked except custom ones](Reflected%20XSS%20into%20HTML%20context%20with%20all%20tags%20blocked%20except%20custom%20ones.md)                                                                                 | PRACTITIONER | Reflected |
+| 16 ✅  | [Reflected XSS with some SVG markup allowed](Reflected%20XSS%20with%20some%20SVG%20markup%20allowed.md)                                                                                                                                                       | PRACTITIONER | Reflected |
+| 17 ✅  | [Reflected XSS in canonical link tag](Reflected%20XSS%20in%20canonical%20link%20tag.md)                                                                                                                                                                       | PRACTITIONER | Reflected |
+| 18 ✅  | [Reflected XSS into a JavaScript string with single quote and backslash escaped](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20single%20quote%20and%20backslash%20escaped.md)                                                                     | PRACTITIONER | Reflected |
+| 19 ✅ | [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20escaped.md)      | PRACTITIONER | Reflected |
+| 20 ✅ | [Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped](Stored%20XSS%20into%20onclick%20event%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20and%20backslash%20escaped.md)            | PRACTITIONER | Stored    |
+| 21 ✅ | [Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped](Reflected%20XSS%20into%20a%20template%20literal%20with%20angle%20brackets%2C%20single%2C%20double%20quotes%2C%20backslash%20and%20backticks%20Unicode-escaped.md) | PRACTITIONER | Reflected |
+| 22 ✅ | [Exploiting cross-site scripting to steal cookies](Exploiting%20cross-site%20scripting%20to%20steal%20cookies.md)                                                                                                                                             | PRACTITIONER | Exploit   |
+| 23 ✅ | [Exploiting cross-site scripting to capture passwords](Exploiting%20cross-site%20scripting%20to%20capture%20passwords.md)                                                                                                                                     | PRACTITIONER | Exploit   |
+| 24    | [Exploiting XSS to perform CSRF](Exploiting%20XSS%20to%20perform%20CSRF.md)                                                                                                                                                                                   | PRACTITIONER | Exploit   |
+|25|[Reflected XSS with AngularJS sandbox escape without strings](Reflected%20XSS%20with%20AngularJS%20sandbox%20escape%20without%20strings.md)|EXPERT|Reflected|
+|26|[Reflected XSS with AngularJS sandbox escape and CSP](Reflected%20XSS%20with%20AngularJS%20sandbox%20escape%20and%20CSP.md)|EXPERT|Reflected|
+|27|[Reflected XSS with event handlers and href attributes blocked](Reflected%20XSS%20with%20event%20handlers%20and%20href%20attributes%20blocked.md)|EXPERT|Reflected|
+|28|[Reflected XSS in a JavaScript URL with some characters blocked](Reflected%20XSS%20in%20a%20JavaScript%20URL%20with%20some%20characters%20blocked.md)|EXPERT|Reflected|
+|29|[Reflected XSS protected by very strict CSP, with dangling markup attack](Reflected%20XSS%20protected%20by%20very%20strict%20CSP,%20with%20dangling%20markup%20attack.md)|EXPERT|Reflected|
+|30|[Reflected XSS protected by CSP, with CSP bypass](Reflected%20XSS%20protected%20by%20CSP,%20with%20CSP%20bypass.md)|EXPERT|Reflected|
 
 ## What is an XSS ?
 An XSS (Cross-Site Scripting) is a security flaw in a website or web application that lets attackers:

@@ -1,4 +1,4 @@
-## Reflected XSS into attribute with angle brackets HTML-encodedTitle
+## Reflected XSS into a JavaScript string with angle brackets HTML encoded
 
 ### Objective:
 - This lab contains a reflected cross-site scripting vulnerability in the search blog functionality where angle brackets are HTML-encoded. 

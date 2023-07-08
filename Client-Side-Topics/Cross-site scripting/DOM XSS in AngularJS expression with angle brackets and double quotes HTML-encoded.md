@@ -1,4 +1,4 @@
-## DOM XSS in AngularJS expression with angle brackets and doubt quotes HTML-encoded
+## DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 
 ### Objective:
 - This lab contains a DOM-based cross-site scripting vulnerability in a AngularJS expression within the search functionality.

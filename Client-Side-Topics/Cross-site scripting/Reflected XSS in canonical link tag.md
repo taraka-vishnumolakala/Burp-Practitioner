@@ -1,4 +1,4 @@
-## Reflect XSS in canonical link tag
+## Reflected XSS in canonical link tag
 
 ### Objective:
 - This lab reflects user input in a canonical link tag and escapes angle brackets.
