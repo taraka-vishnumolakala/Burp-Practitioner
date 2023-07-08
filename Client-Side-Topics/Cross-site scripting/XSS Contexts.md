@@ -1,12 +1,17 @@
 
 ## What is an XSS Context ?
-- The location within the response where attacker controlled data appears
-- This could be within a HTML tag, within a tag attribute which might be quoted, within a javascript string, etc.
-- Any input validation or other processing that is being performed on that data by the application
+- XSS context refers to the location within the response where attacker-controlled data appears.
+- This context can vary and includes locations such as within an HTML tag, within a tag attribute (which may be quoted), within a JavaScript string, and so on.
+- Understanding the XSS context is crucial for crafting effective XSS payloads that can exploit the vulnerability.
+- Additionally, it's important to consider any input validation or processing performed by the application on the attacker-controlled data within that context.
+- The presence of input validation or other processing can impact the effectiveness and type of XSS payload required to successfully exploit the vulnerability.
 
 ## XSS between HTML tags
 
-- When XSS context is text between HTML tags, we need to introduce some new HTML tags designed to trigger execution of JavaScript.
+- When the XSS context is the text between HTML tags, special HTML tags need to be introduced to trigger the execution of JavaScript.
+- These new HTML tags are specifically crafted to exploit the XSS vulnerability and execute the desired JavaScript code.
+- Examples of such tags include `<script>`, `<img>`, `<iframe>`, `<svg>`, and others, which can be used to inject and execute JavaScript code within the HTML context.
+- By injecting JavaScript code using these tags, an attacker can perform malicious actions, such as stealing user data or manipulating the behavior of the website.
 
 | #   | Lab Name                                                                                                                                                                      | Level        | XSS Type  |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
@@ -20,8 +25,10 @@
 
 ## XSS in HTML tag attributes
 
-- When XSS context is into an HTML tag attribute value, we might sometimes be able to terminate the attribute value, close the tag, and introduce new one. 
-- In instances where angle brackets are blocked or encoded, we can try to terminate the attribute value, and create a new attribute that creates a scriptable context, such as event handler.
+- When the XSS context is within an HTML tag attribute value, it may be possible to terminate the attribute value, close the tag, and introduce a new tag.
+- In situations where angle brackets are blocked or encoded, it is still possible to exploit the XSS vulnerability by terminating the attribute value and creating a new attribute that allows for a scriptable context, such as an event handler.
+- By terminating the attribute value and introducing a new attribute that can execute JavaScript code, an attacker can manipulate the behavior of the website and perform malicious actions.
+- Examples of attributes that can be exploited for XSS include `onmouseover`, `onclick`, `onload`, and others, which allow JavaScript code to be executed when the associated event is triggered.
 
 | #    | Lab Name                                                                                                                                                          | Level        | XSS Type  |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
@@ -32,10 +39,15 @@
 
 ## XSS into JavaScript
 
-- When XSS context is some existing JavaScript within the response, a wide variety of situations can arise, with different techniquest necessary to perform an exploit.
+- When the XSS context is existing JavaScript within the response, various situations can arise, each requiring different techniques to perform an exploit.
+- The specific technique needed to exploit the XSS vulnerability depends on the context and how the existing JavaScript is used within the application.
+- Some common techniques include manipulating variables, modifying function calls, injecting additional JavaScript code, or leveraging the existing JavaScript logic to execute malicious actions.
+- Exploiting XSS within JavaScript requires a deep understanding of the application's JavaScript code and how it interacts with user input.
+- Depending on the circumstances, different XSS payloads and injection points may be necessary to successfully execute the desired JavaScript code and achieve the intended malicious actions.
 
 ### Terminating the existing script
-- Consider an example where our input data is injected to a variable inside **`<script>`** tag.
+
+- In a scenario where our input data is injected into a variable inside a `<script>` tag, we can use a payload to break out of the existing JavaScript and execute our own code.
 ```html
 <script>
 	...
@@ -43,51 +55,53 @@
 	...
 </script>
 ```
-- We can use the following payload to break out of the existing JavaScript and execute our own:
+- The following payload can be used:
 ```html
 </script><img src=1 onerror=alert(document.domain)>
 ```
-- **How does this payload work when we aren't terminating the string properly?**
-	- The reason this works is that the browser first performs HTML parsing to identify the page elements including blocks of scripts
-	- Only later it performs JavaScript parsing to understand and execute the embedded scripts
-	- **Our above payload ofcourse leaves the original script broken, with an unterminated string literal**
-	- **But this doesn't prevent the subsequent script being parsed and executed in the normal way**
+- **This payload works even though the string is not properly terminated within the injected data.
+- **The reason this payload works is that the browser first performs HTML parsing to identify page elements, including blocks of scripts.**
+- **Only later does it perform JavaScript parsing to understand and execute the embedded scripts.**
+- **The above payload leaves the original script broken, with an unterminated string literal.**
+- **However, this doesn't prevent the subsequent script from being parsed and executed in the normal way.**
+- **As a result, the injected payload is treated as a separate script and executed, triggering the `onerror` event and executing the JavaScript code within the payload.**
 
 ### Breaking out of a JavaScript string
-- In cases when it is not possible to break out of a string and execute JavaScript directly (as mentioned in Terminating the existing script) it is essential to repair the script following the XSS context.
-- This happens because of any syntax errors preventing the whole script from executing. 
-- Some examples to break out of string literal:
-```javascript
-'-alert(docuemnt.domain)-'
-';alert(document.domain)//
-```
-- **What happens if the application doesn't let us break out of JavaScript?**
-	- Applications typically escape any single quote characters with a backslash which tells the application to not interpret it as a special character.  
-	- But applications in some scenarios fail to escape the backslash character itself. This lets an attacker use their own backslash character to neutralize. 
-```javascript
-';alert(document.domain)// --> gets converted to \';alert(document.domain)//
-\';alert(document.domain)// --> gets converted to \\';alert(document.domain)//
-```
-- **What if the server uses a whitelist of characters that are accepted?**
-	- This could happen when the server validates characters or uses a WAF to prevent requests from reaching the website. 
-	- One way of bypassing these validations is using **`throw`** statement with an exception handler. This enables us to pass arguments to a function without using parathesis. 
-	- Consider this simple example: **`onerror=alert;throw 1`**. This piece of code assigns **`alert()`** function to the global exception handler and throw statement passes **`1`** to the handler. 
-	- This results in calling **`alert()`** function with **`1`** as argument.
-	- [XSS without parantheses and semi-colons](https://portswigger.net/research/xss-without-parentheses-and-semi-colons)
+
+- In cases where breaking out of a JavaScript string and executing JavaScript directly is not possible (as mentioned in the "Terminating the existing script" section), it becomes necessary to repair the script following the XSS context.
+- It is important to address any syntax errors that may prevent the entire script from executing.
+- Examples of breaking out of a string literal within JavaScript include using specific characters or syntax, such as:
+    - **`'-alert(document.domain)-'`**
+    - **`';alert(document.domain)//'`**
+- If an application doesn't allow breaking out of JavaScript, it may escape single quote characters with a backslash to treat them as literal characters rather than special characters.
+- However, if the application fails to escape the backslash character itself, an attacker can use their own backslash character to neutralize the escaping, allowing them to break out of the string.
+- For example:
+    - **`';alert(document.domain)//`** gets converted to **`\'alert(document.domain)//`**
+    - **`\'alert(document.domain)//`** gets converted to **`\\'alert(document.domain)//`**
+- If the server uses a whitelist of accepted characters or employs a Web Application Firewall (WAF) to prevent certain requests from reaching the website, bypassing these validations may be necessary.
+- One approach to bypassing these validations is by using the **throw** statement with an exception handler. This enables passing arguments to a function without using parentheses.
+- For example:
+	- **`onerror=alert;throw 1`** assigns the **`alert()`** function to the global exception handler and passes **`1`** as an argument
+	- This results in calling the **`alert()`** function with **`1`** as the argument.
+- The technique of executing XSS without parentheses and semicolons is further explained in the article titled [XSS without parentheses and semicolons](https://portswigger.net/research/xss-without-parentheses-and-semi-colons).
 
 ### Making use of HTML-encoding
-- When XSS context is some existing JavaScript within a quoted tag attribute, such as an event handler, it is possible to make use of HTML encoding to work around some input filters. 
-> 🗒️ **NOTE**
-> When the browser has parsed out the html tags and attributes within a response, it will perform HTML-decoding of tag attribute values before they are processed any further. 
-- If the server side application blocks or sanitizes certain characters that are needed for a successful XSS exploit, you can often bypass the input validation by HTML-encoding those characters. 
-- Consider the following example:
-	- If the server blocks or escapes single quote characters, we can use the folling example payload **`&apos;-alert(document.domain)-&apos;`**
-- If our input payload is part of an event handler such as onclick, browser HTML-decodes the value before the JavaScript is interpreted and results in a successful execution of JavaScript code. 
+- When the XSS context is within an existing JavaScript code that is within a quoted tag attribute, such as an event handler, it is possible to leverage HTML encoding to bypass certain input filters.
+- After the browser has parsed the HTML tags and attributes within a response, it performs HTML decoding of tag attribute values before further processing.
+- If the server-side application blocks or sanitizes certain characters that are necessary for a successful XSS exploit, you can often bypass the input validation by HTML encoding those characters.
+- In the case of blocking or escaping single quote characters, you can use HTML encoding to represent the single quote character as **`&apos;`**.
+- For example, if the server blocks or escapes single quote characters, the following payload can be used: **`&apos;-alert(document.domain)-&apos;`**.
+- If the input payload is part of an event handler attribute such as `onclick`, the browser HTML decodes the value before interpreting the JavaScript code, resulting in the successful execution of the JavaScript code.
 
 ### XSS in JavaScript template literals
-- JavaScript template literals are string literals that allow embedded JavaScript expressions and evaluate them. 
-- These are encapsulated using backticks instead of normal quotation marks and embeded expressions are identified using **`${...}`** syntax.
- 
+- JavaScript template literals are string literals that support embedded JavaScript expressions within them.
+- Template literals are enclosed within backticks (**\`\`**)  instead of normal quotation marks.
+- Embedded JavaScript expressions are identified within template literals using the **`${...}`** syntax.
+- The expressions within **`${...}`** are evaluated dynamically at runtime and can include variables, function calls, or any valid JavaScript code.
+- Template literals provide a convenient way to concatenate strings and dynamically generate content.
+- When dealing with XSS in JavaScript template literals, it is important to ensure that any user-controlled input is properly sanitized or encoded before being included within the template literal.
+- Failure to properly sanitize or validate user-controlled input within template literals can lead to XSS vulnerabilities, allowing an attacker to execute malicious JavaScript code within the context of the template literal.
+
 | #    | Lab Name                                                                                                                                                                                                                                                                                      | Level        | XSS Type  |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
 | 10 ✅ | [Reflected XSS into a javascript string with single quote and backslash escaped](Reflected%20XSS%20into%20a%20javascript%20string%20with%20single%20quote%20and%20backslash%20escaped.md)                                                                                                     | PRACTITIONER | Reflected |

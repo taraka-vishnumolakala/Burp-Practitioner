@@ -1,21 +1,17 @@
-[Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md) - Apprentice
+| #   | Lab Name                                                                                                                      | Level      | Type      |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | --------- |
+| 1 ✅   | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md) | APPRENTICE | Reflected | 
 
 ## Reflected XSS in different contexts
-- The location of the reflected data within the applications response determines what type of payload is required to exploit it and might also affect the impact of the vulnerability
-- Additionally, if the application performs any validation or other processing on the submitted data before it is reflected, this will generally affect what kind of XSS payload is needed. 
+- The location of the reflected data within the application's response determines the type of payload needed to exploit it and can also impact the vulnerability's impact.
+- The context in which the reflected data is used within the application also plays a crucial role in determining the required XSS payload.
+- Validation or processing of the submitted data before it is reflected can affect the effectiveness of XSS payloads.
 
 ## How to identify and test for reflected XSS
-- Testing for every entry point
-	- this includes parameters, data within url query string, message body and url file path
-	- also includes http headers, although xss-like behavior that can only be triggered via certain HTTP headers may not be exploitable
-- Submit random alphanumeric values
-	- For each identified entry point submit the random value and see whether the value is reflected in response
-- Determine the reflection context
-	- For each location within the response determine if it is reflected between html tags, within a tag attribute which might be quoted, within a javascript string, etc.
-- Test a candidate payload
-	- An efficient way to work is to use the random value as your xss payload and set the value as your search string in repeater's response.
-	- burp will highlight each location where the search term appears.
-- Test alternative payloads
-	- If for some reason the css payload was modified or blocked by the application then you will need to test for alternative payloads that might deliver a working xss attack
-- Test the attack in a browser
-	- Finally, if you find a working exploit then it's time to test it out from within the browser
+Identify and test for reflected XSS by following these steps:
+- Test every entry point in the application, including parameters, data within the URL query string, message body, URL file path, and HTTP headers (note that certain XSS-like behaviors triggered by specific headers may not be exploitable).
+- Submit random alphanumeric values as input for each entry point and check if the value is reflected in the application's response.
+- Determine the reflection context within the response, such as whether the reflected data appears between HTML tags, within a tag attribute (which may be quoted), or within a JavaScript string.
+- Test a candidate payload by using the random value as an XSS payload and searching for it in the response using a tool like Burp Suite's Repeater. Burp Suite will highlight each location where the search term appears.
+- Test alternative payloads if the original payload is modified or blocked by the application, exploring different XSS attack vectors that might work.
+- Test the XSS attack in a browser if you find a working exploit, to ensure it behaves as intended when executed within the context of a browser.
