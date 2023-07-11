@@ -25,7 +25,8 @@ location = 'https://YOUR-LAB-ID.web-security-academy.net/?search=%3Cxss+id%3Dx+o
 	2. An **`id`** with a value set to **`x`** is defined 
 	3. **`tabindex=1`** value will make the browser to focus on this tag element  on hitting the tab for the first time.
 	4. The trailing **`#x`** will focus on the element automatically when the html is rendered.
-7. This injection creates a custom tag with the ID `x`, which contains an `onfocus` event handler that triggers the `alert` function. The hash at the end of the URL focuses on this element as soon as the page is loaded, causing the `alert` payload to be called.
+7. The purpose of **`location`** inside the script tag is to redirect to the specified url.
+8. This injection creates a custom tag with the ID `x`, which contains an `onfocus` event handler that triggers the `alert` function. The hash at the end of the URL focuses on this element as soon as the page is loaded, causing the `alert` payload to be called.
 
 ### Insecure Code:
 

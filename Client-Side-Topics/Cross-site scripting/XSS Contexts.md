@@ -32,7 +32,7 @@
 
 | #    | Lab Name                                                                                                                                                          | Level        | XSS Type  |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
-| 7 ✅ | [Reflected XSS into a JavaScript string with angle brackets HTML encoded](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20HTML%20encoded.md)                   | APPRENTICE   | Reflected |
+| 7 ✅ | [Reflected XSS into attribute with angle brackets HTML encoded](Reflected%20XSS%20into%20attribute%20with%20angle%20brackets%20HTML%20encoded.md)                   | APPRENTICE   | Reflected |
 | 8 ✅ | [Stored XSS into anchor href attribute with double quotes HTML-encoded](Stored%20XSS%20into%20anchor%20href%20attribute%20with%20double%20quotes%20HTML-encoded.md) | APPRENTICE   | Stored    |
 | 9 ✅   | [Reflected XSS in canonical link tag](Reflected%20XSS%20in%20canonical%20link%20tag.md)                                                                               | PRACTITIONER | Reflected | 
 
@@ -60,7 +60,7 @@
 </script><img src=1 onerror=alert(document.domain)>
 ```
 - **This payload works even though the string is not properly terminated within the injected data.
-- **The reason this payload works is that the browser first performs HTML parsing to identify page elements, including blocks of scripts.**
+- **The reason this payload works is because the browser first performs HTML parsing to identify page elements, including blocks of scripts.**
 - **Only later does it perform JavaScript parsing to understand and execute the embedded scripts.**
 - **The above payload leaves the original script broken, with an unterminated string literal.**
 - **However, this doesn't prevent the subsequent script from being parsed and executed in the normal way.**

@@ -5,7 +5,7 @@
 - To solve the lab, perform a cross-site scripting attack that bypasses the WAF and calls the `print()` function.
 
 > 🗒️ **NOTE**
-> Although we can use the payload `<body onbeforeinput=print()>` and invoke the print funtion by typing something on out search input and reflecting the xss on our own browser we can't use it since the lab specifically mentions the solution **must not require any user interaction**.
+> Although we can use the payload `<body onbeforeinput=print()>` and invoke the print funtion by typing something on our search input and reflecting the xss on our own browser we can't use it since the lab specifically mentions the solution **must not require any user interaction**.
 
 ### Security Weakness:
 
@@ -39,7 +39,7 @@
 - there is a WAF that blocks most tags and only allows a few tags. we can validate this using intruder.
 - similarly the WAF also blocks most of the events but only allows a few of them. This can also be validated using intruder.
 > 🗒️ **NOTE**
-> Browsers when rendering html only allow one **body** tag and merge an events related to inner body tags to the parent body tag. So, in our scenario if we try to inject a body tag with events into our search field, our inner body tag gets removed and the event gets added to the parent body tag.
+> Browsers when rendering html only allow one **body** tag and merge any events related to inner body tags to the parent body tag. So, in our scenario if we try to inject a body tag with events into our search field, our inner body tag gets removed and the event gets added to the parent body tag.
 - Why are we using this exploit code ?
 	- To deliver the payload to our victim user and execute it with no interaction we are using **iframe** tag to inject our vulnerable web app with malicious payload and trying to resize the frame **onload** without any interaction 
 - How does the exploit code work ?

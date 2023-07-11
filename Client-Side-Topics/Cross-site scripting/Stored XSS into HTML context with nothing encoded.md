@@ -13,7 +13,7 @@
     ```html
     <script>alert(1)</script>
 	```
-4. As shown in box-2 Name encodes the data. So, it's not vulnerable to xss. 
+4. As shown in box-2, our name value is encoded. So, it's not vulnerable to xss. 
 5. Entering an xss payload value in the comment results in a successful xss. Shown in box-3
 ![](./Images/c9c53839c0adeeab0e202b182e7dd93e.png)
 

@@ -65,7 +65,7 @@ element.innerHTML = '... <img src=1 onerror=alert(document.domain)> ...';
 
 ### Sources and sinks in third party dependencies
 - Web applications built with third-party libraries and frameworks can also introduce potential sources and sinks for DOM XSS vulnerabilities.
-#### DOM XSS in jQuery:**
+#### DOM XSS in jQuery:
 - If user-controlled data, such as a parameter in a URL, is passed to a jQuery function like **`attr()`**, it can lead to the execution of arbitrary JavaScript and result in XSS.
 - An example payload that can be injected into **`attr()`** is **`javascript:alert(document.domain)`**.
 - Another important sink to be aware of is the **`$()`** function in jQuery, which serves as a selector function. It can be used to manipulate the DOM and potentially introduce malicious objects.
