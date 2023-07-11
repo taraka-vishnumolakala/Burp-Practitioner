@@ -1,5 +1,7 @@
 # Cross-site scripting (XSS)
 
+[Exam Notes](Exam-Notes.md)
+
 ## Labs
 
 | #    | Lab Name                                                                                                                                                                                              | Level      | XSS Type  |
