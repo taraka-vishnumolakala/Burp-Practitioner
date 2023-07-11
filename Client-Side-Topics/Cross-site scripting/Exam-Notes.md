@@ -1,3 +1,5 @@
+# Exam Notes
+
 - If xss context is **within html tags** 
 	- **with no encoding**
 		- We can simply introduce the below payload to execute our javascript code.
