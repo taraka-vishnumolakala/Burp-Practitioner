@@ -157,7 +157,7 @@ For more detailed information on exploiting XSS vulnerabilities and understandin
 
 ## Content Security Policy
  - A browser mechanism aimed at mitigating the impact of cross-site scripting and **some other vulnerabilities**
- - More on [Content Security Policy](Content%20%Security%20%Policy.md)
+ - More on [Content Security Policy](Content%20Security%20Policy.md)
 
 ## Preventing XSS Attacks
 
