@@ -53,7 +53,7 @@ Total Labs: 89
 | 22    | OAuth authentication                                                   | 6           | 1          | 4            | 1      |
 | 23 ✅ | [JWT attacks](Advanced-Topics/JWT%20Attacks/README.md)                 | 8           | 2          | 4            | 2      |
 | 24    | [Prototype pollution](Advanced-Topics/Prototype%20Pollution/README.md) | 10   ❗️    | N/A        | 9            | 1      |
-| 25    | GraphQL API vulnerabilities                                            | 5           | 1          | 4            | N/A       |
+| 25 ✅   | [GraphQL API Vulnerabilities](Advanced-Topics/GraphQL%20API%20Vulnerabilities/README.md)                                            | 5           | 1          | 4            | N/A       |
 | 26    | Essential skills                                                       | 1           | N/A        | 1            | N/A    |
 
 
