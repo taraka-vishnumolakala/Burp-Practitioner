@@ -15,11 +15,11 @@
 ### Common endpoint names
 
 GraphQL services often use similar endpoint suffixes. When testing for GraphQL endpoints, you should look to send universal queries to the following locations:
-- `/graphql`
-- `/api`
-- `/api/graphql`
-- `/graphql/api`
-- `/graphql/graphql`
+- **`/graphql`**
+- **`/api`**
+- **`/api/graphql`**
+- **`/graphql/api`**
+- **`/graphql/graphql`**
 
 ### Request Methods
 
@@ -31,7 +31,7 @@ GraphQL services often use similar endpoint suffixes. When testing for GraphQL e
 - Introspection is a built-in GraphQL function that enables you to query a server information about that schema.
 - It helps us to understand how to interact with the GraphQL API. In some cases it might also disclose potentially sensitive data, such as description fields. 
 - As example of full introspection query would look like:
-```json
+```javascript
 query IntrospectionQuery { __schema { queryType { name } mutationType { name } subscriptionType { name } types { ...FullType } directives { name description args { ...InputValue } onOperation #Often needs to be deleted to run query onFragment #Often needs to be deleted to run query onField #Often needs to be deleted to run query } } } fragment FullType on __Type { kind name description fields(includeDeprecated: true) { name description args { ...InputValue } type { ...TypeRef } isDeprecated deprecationReason } inputFields { ...InputValue } interfaces { ...TypeRef } enumValues(includeDeprecated: true) { name description isDeprecated deprecationReason } possibleTypes { ...TypeRef } } fragment InputValue on __InputValue { name description type { ...TypeRef } defaultValue } fragment TypeRef on __Type { kind name ofType { kind name ofType { kind name ofType { kind name } } } }
 ```
 
@@ -48,7 +48,7 @@ query IntrospectionQuery { __schema { queryType { name } mutationType { name } s
 - If you cannot get introspection queries to run for the API you are testing, try inserting a special character after the `__schema` keyword.
 - When developers disable introspection, they could use a regex to exclude the `__schema` keyword in queries. You should try characters like spaces, new lines and commas, as they are ignored by GraphQL but not by flawed regex.
 - As such, if the developer has only excluded **`__schema{`**, then the below introspection query would not be excluded.
-```json
+```js
 	{ 
 		"query": "query{__schema
 		{queryType{name}}}" 
@@ -59,6 +59,7 @@ query IntrospectionQuery { __schema { queryType { name } mutationType { name } s
 - The example below shows an introspection probe sent via GET, with URL-encoded parameters.
 ```basic
 	#Introspection probe as GET request 
+	
 	GET /graphql?query=query%7B__schema%0A%7BqueryType%7Bname%7D%7D%7D
 ```
 

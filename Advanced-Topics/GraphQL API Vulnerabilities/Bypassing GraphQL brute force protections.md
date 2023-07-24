@@ -20,7 +20,7 @@
     - Each aliased mutation should have the username **`carlos`** and a different password from the authentication list.
     - If you are modifying the request that you sent to Repeater, delete the variable dictionary and **`operationName`** field from the request before sending. You can do this from Repeater's **Pretty** tab.
     - Ensure that each alias requests the **`success`** field, as shown in the simplified example below:
-```
+```js
 	mutation { 
 		bruteforce0:login(input:{password: "123456", username: "carlos"}) { 
 			token 
