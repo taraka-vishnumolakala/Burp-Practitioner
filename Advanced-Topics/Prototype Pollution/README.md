@@ -1,17 +1,17 @@
 ## Labs
 
-| #   | Lab Name                                                                                                | Level        |
-| --- | ------------------------------------------------------------------------------------------------------- | ------------ |
+| #   | Lab Name                                                                                             | Level        |
+| --- | ---------------------------------------------------------------------------------------------------- | ------------ |
 | 1   | [DOM XSS via client-side prototype pollution](DOM%20XSS%20via%20client-side%20prototype%20pollution) | PRACTITIONER |
-| 2   | DOM XSS via an alternative prototype pollution vector                                                   | PRACTITIONER |
-| 3   | Client-side prototype pollution via flawed sanitization                                                 | PRACTITIONER |
-| 4   | Client-side prototype pollution in third-party libraries                                                | PRACTITIONER |
-| 5   | Client-side prototype pollution via browser APIs                                                        | PRACTITIONER |
-| 6   | Privilege escalation via server-side prototype pollution                                                | PRACTITIONER |
-| 7   | Detecting server-side prototype pollution without polluted property reflection                          | PRACTITIONER |
-| 8   | Bypassing flawed input filters for server-side prototype pollution                                      | PRACTITIONER |
-| 9   | Remote code execution via server-side prototype pollution                                               | PRACTITIONER |
-| 10  | Exfiltrating sensitive data via server-side prototype pollution                                         | EXPERT       |
+| 2   | DOM XSS via an alternative prototype pollution vector                                                | PRACTITIONER |
+| 3   | Client-side prototype pollution via flawed sanitization                                              | PRACTITIONER |
+| 4   | Client-side prototype pollution in third-party libraries                                             | PRACTITIONER |
+| 5   | Client-side prototype pollution via browser APIs                                                     | PRACTITIONER |
+| 6   | Privilege escalation via server-side prototype pollution                                             | PRACTITIONER |
+| 7   | Detecting server-side prototype pollution without polluted property reflection                       | PRACTITIONER |
+| 8   | Bypassing flawed input filters for server-side prototype pollution                                   | PRACTITIONER |
+| 9   | Remote code execution via server-side prototype pollution                                            | PRACTITIONER |
+| 10  | Exfiltrating sensitive data via server-side prototype pollution                                      | EXPERT       |
 
 
 ## How do prototype pollution vulnerabilities arise ?
