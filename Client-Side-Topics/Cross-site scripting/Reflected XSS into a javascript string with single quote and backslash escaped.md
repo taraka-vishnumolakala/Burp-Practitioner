@@ -14,7 +14,7 @@
 - We see that our input is inside a script tag assigned to a variable. 
 - To exploit this lab, we need to end the script tag and introduce our own tag to execute JavaScript payload. 
 ![](./Images/67ae8e0fc03eb128b9fd0f548aca1836.png)
-- To understand how this payload works [click here](./XSS%20Contexts.md#terminating-the-existing-script) 
+- To understand how this payload works [click here](./XSS%20Contexts#terminating-the-existing-script) 
 
 ### Insecure Code:
 

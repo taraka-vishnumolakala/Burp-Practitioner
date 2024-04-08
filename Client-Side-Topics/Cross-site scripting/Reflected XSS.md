@@ -1,6 +1,6 @@
-| #   | Lab Name                                                                                                                      | Level      | Type      |
-| --- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | --------- |
-| 1 ✅   | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md) | APPRENTICE | Reflected | 
+| #   | Lab Name                                                                                                                      | Level      | Type      |     |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | --------- | --- |
+| 1 ✅ | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded) | APPRENTICE | Reflected |     |
 
 ## Reflected XSS in different contexts
 - The location of the reflected data within the application's response determines the type of payload needed to exploit it and can also impact the vulnerability's impact.

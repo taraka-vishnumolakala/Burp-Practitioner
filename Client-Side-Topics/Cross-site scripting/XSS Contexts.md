@@ -15,12 +15,12 @@
 
 | #   | Lab Name                                                                                                                                                                      | Level        | XSS Type  |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
-| 1 ✅   | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md)                                                 | APPRENTICE   | Reflected |
-| 2 ✅  | [Stored XSS into HTML context with nothing encoded](Stored%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md)                                                       | APPRENTICE   | Stored    |
-| 3 ✅  | [Reflected XSS into HTML context with most tags and attributes blocked](Reflected%20XSS%20into%20HTML%20context%20with%20most%20tags%20and%20attributes%20blocked.md)         | PRACTITIONER | Reflected |
-| 4 ✅  | [Reflected XSS into HTML context with all tags blocked except custom ones](Reflected%20XSS%20into%20HTML%20context%20with%20all%20tags%20blocked%20except%20custom%20ones.md) | PRACTITIONER | Reflected |
-| 5   | [Reflected XSS with event handlers and href attributes blocked](Reflected%20XSS%20with%20event%20handlers%20and%20href%20attributes%20blocked.md)                                                                                                              | EXPERT       | Reflected |
-| 6 ✅  | [Reflected XSS with some SVG markup allowed](Reflected%20XSS%20with%20some%20SVG%20markup%20allowed.md)                                                                                                                                  | PRACTITIONER | Reflected |
+| 1 ✅   | [Reflected XSS into HTML context with nothing encoded](Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded)                                                 | APPRENTICE   | Reflected |
+| 2 ✅  | [Stored XSS into HTML context with nothing encoded](Stored%20XSS%20into%20HTML%20context%20with%20nothing%20encoded)                                                       | APPRENTICE   | Stored    |
+| 3 ✅  | [Reflected XSS into HTML context with most tags and attributes blocked](Reflected%20XSS%20into%20HTML%20context%20with%20most%20tags%20and%20attributes%20blocked)         | PRACTITIONER | Reflected |
+| 4 ✅  | [Reflected XSS into HTML context with all tags blocked except custom ones](Reflected%20XSS%20into%20HTML%20context%20with%20all%20tags%20blocked%20except%20custom%20ones) | PRACTITIONER | Reflected |
+| 5   | [Reflected XSS with event handlers and href attributes blocked](Reflected%20XSS%20with%20event%20handlers%20and%20href%20attributes%20blocked)                                                                                                              | EXPERT       | Reflected |
+| 6 ✅  | [Reflected XSS with some SVG markup allowed](Reflected%20XSS%20with%20some%20SVG%20markup%20allowed)                                                                                                                                  | PRACTITIONER | Reflected |
 
 
 ## XSS in HTML tag attributes
@@ -32,9 +32,9 @@
 
 | #    | Lab Name                                                                                                                                                          | Level        | XSS Type  |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
-| 7 ✅ | [Reflected XSS into attribute with angle brackets HTML encoded](Reflected%20XSS%20into%20attribute%20with%20angle%20brackets%20HTML%20encoded.md)                   | APPRENTICE   | Reflected |
-| 8 ✅ | [Stored XSS into anchor href attribute with double quotes HTML-encoded](Stored%20XSS%20into%20anchor%20href%20attribute%20with%20double%20quotes%20HTML-encoded.md) | APPRENTICE   | Stored    |
-| 9 ✅   | [Reflected XSS in canonical link tag](Reflected%20XSS%20in%20canonical%20link%20tag.md)                                                                               | PRACTITIONER | Reflected | 
+| 7 ✅ | [Reflected XSS into attribute with angle brackets HTML encoded](Reflected%20XSS%20into%20attribute%20with%20angle%20brackets%20HTML%20encoded)                   | APPRENTICE   | Reflected |
+| 8 ✅ | [Stored XSS into anchor href attribute with double quotes HTML-encoded](Stored%20XSS%20into%20anchor%20href%20attribute%20with%20double%20quotes%20HTML-encoded) | APPRENTICE   | Stored    |
+| 9 ✅   | [Reflected XSS in canonical link tag](Reflected%20XSS%20in%20canonical%20link%20tag)                                                                               | PRACTITIONER | Reflected | 
 
 
 ## XSS into JavaScript
@@ -104,9 +104,9 @@
 
 | #    | Lab Name                                                                                                                                                                                                                                                                                      | Level        | XSS Type  |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------- |
-| 10 ✅ | [Reflected XSS into a javascript string with single quote and backslash escaped](Reflected%20XSS%20into%20a%20javascript%20string%20with%20single%20quote%20and%20backslash%20escaped.md)                                                                                                     | PRACTITIONER | Reflected |
-| 11 ✅ | [Reflected XSS into Javascript with angle brackets HTML encoded](Reflected%20XSS%20into%20Javascript%20with%20angle%20brackets%20HTML%20encoded.md)                                                                                                                                           | APPRENTICE   | Reflected |
-| 12 ✅ | [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20escaped.md)                  | PRACTITIONER | Reflected |
-| 13    | [Reflected XSS in a JavaScript URL with some characters blocked](Reflected%20XSS%20in%20a%20JavaScript%20URL%20with%20some%20characters%20blocked.md)                                                                                                                                         | EXPERT       | Reflected |
-| 14 ✅ | [Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped](Stored%20XSS%20into%20onclick%20event%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20and%20backslash%20escaped.md)     | PRACTITIONER | Stored    |
-| 15 ✅ | [Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks unicode-escaped](Reflected%20XSS%20into%20a%20template%20literal%20with%20angle%20brackets,%20single,%20double%20quotes,%20backslash%20and%20backticks%20Unicode-escaped.md) | PRACTITIONER | Reflected          |
+| 10 ✅ | [Reflected XSS into a javascript string with single quote and backslash escaped](Reflected%20XSS%20into%20a%20javascript%20string%20with%20single%20quote%20and%20backslash%20escaped)                                                                                                     | PRACTITIONER | Reflected |
+| 11 ✅ | [Reflected XSS into Javascript with angle brackets HTML encoded](Reflected%20XSS%20into%20Javascript%20with%20angle%20brackets%20HTML%20encoded)                                                                                                                                           | APPRENTICE   | Reflected |
+| 12 ✅ | [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20escaped)                  | PRACTITIONER | Reflected |
+| 13    | [Reflected XSS in a JavaScript URL with some characters blocked](Reflected%20XSS%20in%20a%20JavaScript%20URL%20with%20some%20characters%20blocked)                                                                                                                                         | EXPERT       | Reflected |
+| 14 ✅ | [Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped](Stored%20XSS%20into%20onclick%20event%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded%20and%20single%20quotes%20and%20backslash%20escaped)     | PRACTITIONER | Stored    |
+| 15 ✅ | [Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks unicode-escaped](Reflected%20XSS%20into%20a%20template%20literal%20with%20angle%20brackets,%20single,%20double%20quotes,%20backslash%20and%20backticks%20Unicode-escaped) | PRACTITIONER | Reflected          |
