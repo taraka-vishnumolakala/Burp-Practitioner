@@ -1,6 +1,8 @@
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme
+  - jekyll-remote-theme
 
-title: This is my quick reference guide for web app pentesting
-description: Disclaimer: This page serves as my preparation guide for the Burp Practitioner exam, featuring content inspired by and derived from Burp Suite Labs. It is intended for educational purposes only. For official and comprehensive documentation, please visit [PortSwigger - Web Security Academy](https://portswigger.net/web-security). This page is not affiliated with or endorsed by Burp Suite Labs.
+title: "This is my quick reference guide for web app pentesting"
+description: >
+  Disclaimer: This page serves as my preparation guide for the Burp Practitioner exam, featuring content inspired by and derived from Burp Suite. For official and comprehensive documentation, please visit [PortSwigger - Web Security Academy](https://portswigger.net/web-security).
+
