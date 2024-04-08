@@ -3,11 +3,11 @@
 
 | #   | Lab Name                                          | Level        |
 | --- | ------------------------------------------------- | ------------ |
-| 1 ✅  | [Information Disclosure in error messages](Information%20Disclosure%20in%20error%20messages.md)          | APPRENTICE   |
-| 2 ✅  | [Information Disclosure on debug page](Information%20Disclosure%20on%20debug%20page.md)              | APPRENTICE   |
-| 3 ✅  | [Source Code Disclosure via backup files](Source%20Code%20Disclosure%20via%20backup%20files.md)           | APPRENTICE   |
-| 4 ✅  | [Authentication bypass via Information Disclosure](Authentication%20bypass%20via%20Information%20Disclosure.md)  | APPRENTICE   |
-| 5 ✅  | [Information Disclosure in version control history](Information%20Disclosure%20in%20version%20control%20history.md) | PRACTITIONER | 
+| 1 ✅  | [Information Disclosure in error messages](Information%20Disclosure%20in%20error%20messages)          | APPRENTICE   |
+| 2 ✅  | [Information Disclosure on debug page](Information%20Disclosure%20on%20debug%20page)              | APPRENTICE   |
+| 3 ✅  | [Source Code Disclosure via backup files](Source%20Code%20Disclosure%20via%20backup%20files)           | APPRENTICE   |
+| 4 ✅  | [Authentication bypass via Information Disclosure](Authentication%20bypass%20via%20Information%20Disclosure)  | APPRENTICE   |
+| 5 ✅  | [Information Disclosure in version control history](Information%20Disclosure%20in%20version%20control%20history) | PRACTITIONER | 
 
 ## Introduction
 

@@ -3,11 +3,11 @@
 
 | #  | Lab Name                                                | Level        |
 |----|---------------------------------------------------------|--------------|
-| 1 ✅  | [Accessing private GraphQL posts](Accessing%20private%20GraphQL%20posts.md)         | APPRENTICE   |
-| 2 ✅  | [Accidental exposure of private GraphQL fields](Accidental%20exposure%20of%20private%20GraphQL%20fields.md)   | PRACTITIONER |
-| 3 ✅ | [Finding a hidden GraphQL endpoint](Finding%20a%20hidden%20GraphQL%20endpoint.md)      | PRACTITIONER |
-| 4 ✅  | [Bypassing GraphQL brute force protections](Bypassing%20GraphQL%20brute%20force%20protections.md) | PRACTITIONER |
-| 5 ✅  | [Performing CSRF exploits over GraphQL](Performing%20CSRF%20exploits%20over%20GraphQL.md)     | PRACTITIONER |
+| 1 ✅  | [Accessing private GraphQL posts](Accessing%20private%20GraphQL%20posts)         | APPRENTICE   |
+| 2 ✅  | [Accidental exposure of private GraphQL fields](Accidental%20exposure%20of%20private%20GraphQL%20fields)   | PRACTITIONER |
+| 3 ✅ | [Finding a hidden GraphQL endpoint](Finding%20a%20hidden%20GraphQL%20endpoint)      | PRACTITIONER |
+| 4 ✅  | [Bypassing GraphQL brute force protections](Bypassing%20GraphQL%20brute%20force%20protections) | PRACTITIONER |
+| 5 ✅  | [Performing CSRF exploits over GraphQL](Performing%20CSRF%20exploits%20over%20GraphQL)     | PRACTITIONER |
 
 
 ## GraphQL Endpoints

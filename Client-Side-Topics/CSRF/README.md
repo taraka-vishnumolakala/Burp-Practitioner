@@ -4,18 +4,18 @@
 
 | #  | Lab Name                                                                 | Level        |
 |----|--------------------------------------------------------------------------|--------------|
-| 1  | [CSRF vulnerability with no defenses](CSRF%20vulnerability%20with%20no%20defenses.md)                   | APPRENTICE   |
-| 2  | [CSRF where token validation depends on request method](CSRF%20where%20token%20validation%20depends%20on%20request%20method.md)    | PRACTITIONER |
-| 3  | [CSRF where token validation depends on token present](CSRF%20where%20token%20validation%20depends%20on%20token%20being%20present.md)    | PRACTITIONER |
-| 4  | [CSRF where token is not tied to user session](CSRF%20where%20token%20is%20not%20tied%20to%20user%20session.md)            | PRACTITIONER |
-| 5  | [CSRF where token is tied to non-session cookie](CSRF%20where%20token%20is%20tied%20to%20non-session%20cookie.md)        | PRACTITIONER |
-| 6  | [CSRF where token is duplicated in cookie](CSRF%20where%20token%20is%20duplicated%20in%20cookie.md)                | PRACTITIONER |
-| 7  | [SameSite Lax bypass via method override](SameSite%20Lax%20bypass%20via%20method%20override.md)           | PRACTITIONER |
-| 8  | [SameSite Strict bypass via client-side redirect](SameSite%20Strict%20bypass%20via%20client-side%20redirect.md)       | PRACTITIONER |
-| 9  | [SameSite Strict bypass via sibling domain](SameSite%20Strict%20bypass%20via%20sibling%20domain.md)             | PRACTITIONER |
-| 10 | [SameSite Lax bypass via cookie refresh](SameSite%20Lax%20bypass%20via%20cookie%20refresh.md)               | PRACTITIONER |
-| 11 | [CSRF where Referer validation depends on header being present](CSRF%20where%20Referer%20validation%20depends%20on%20header%20being%20present.md) | PRACTITIONER |
-| 12 | [CSRF with broken Referer validation](CSRF%20with%20broken%20Referer%20validation.md)                      | PRACTITIONER |
+| 1  | [CSRF vulnerability with no defenses](CSRF%20vulnerability%20with%20no%20defenses)                   | APPRENTICE   |
+| 2  | [CSRF where token validation depends on request method](CSRF%20where%20token%20validation%20depends%20on%20request%20method)    | PRACTITIONER |
+| 3  | [CSRF where token validation depends on token present](CSRF%20where%20token%20validation%20depends%20on%20token%20being%20present)    | PRACTITIONER |
+| 4  | [CSRF where token is not tied to user session](CSRF%20where%20token%20is%20not%20tied%20to%20user%20session)            | PRACTITIONER |
+| 5  | [CSRF where token is tied to non-session cookie](CSRF%20where%20token%20is%20tied%20to%20non-session%20cookie)        | PRACTITIONER |
+| 6  | [CSRF where token is duplicated in cookie](CSRF%20where%20token%20is%20duplicated%20in%20cookie)                | PRACTITIONER |
+| 7  | [SameSite Lax bypass via method override](SameSite%20Lax%20bypass%20via%20method%20override)           | PRACTITIONER |
+| 8  | [SameSite Strict bypass via client-side redirect](SameSite%20Strict%20bypass%20via%20client-side%20redirect)       | PRACTITIONER |
+| 9  | [SameSite Strict bypass via sibling domain](SameSite%20Strict%20bypass%20via%20sibling%20domain)             | PRACTITIONER |
+| 10 | [SameSite Lax bypass via cookie refresh](SameSite%20Lax%20bypass%20via%20cookie%20refresh)               | PRACTITIONER |
+| 11 | [CSRF where Referer validation depends on header being present](CSRF%20where%20Referer%20validation%20depends%20on%20header%20being%20present) | PRACTITIONER |
+| 12 | [CSRF with broken Referer validation](CSRF%20with%20broken%20Referer%20validation)                      | PRACTITIONER |
 
 ## What is CSRF?
 

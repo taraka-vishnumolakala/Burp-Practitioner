@@ -3,14 +3,14 @@
 
 | #    | Lab Name                                                                                                                                                            | Level        |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1 ✅ | [JWT authentication bypass via unverified signature](JWT%20authentication%20bypass%20via%20unverified%20signature.md)                                               | APPRENTICE   |
-| 2 ✅ | [JWT authentication bypass via flawed signature verification](JWT%20authentication%20bypass%20via%20flawed%20signature%20verification.md)                           | APPRENTICE   |
-| 3 ✅ | [JWT authentication bypass via weak signing key](JWT%20authentication%20bypass%20via%20weak%20signing%20key.md)                                                     | PRACTITIONER |
-| 4 ✅ | [JWT authentication bypass via jwk header injection](JWT%20authentication%20bypass%20via%20jwk%20header%20injection.md)                                             | PRACTITIONER |
-| 5 ✅ | [JWT authentication bypass via jku header injection](JWT%20authentication%20bypass%20via%20jku%20header%20injection.md)                                             | PRACTITIONER |
-| 6 ✅ | [JWT authentication bypass via kid header path traversal](JWT%20authentication%20bypass%20via%20kid%20header%20path%20traversal.md)                                 | PRACTITIONER |
-| 7 ✅ | [JWT authentication bypass via algorithm confusion](JWT%20authentication%20bypass%20via%20algorithm%20confusion.md)                                                 | EXPERT       |
-| 8    | [JWT authentication bypass via algorithm confusion with no exposed key](JWT%20authentication%20bypass%20via%20algorithm%20confusion%20with%20no%20exposed%20key.md) | EXPERT       |
+| 1 ✅ | [JWT authentication bypass via unverified signature](JWT%20authentication%20bypass%20via%20unverified%20signature)                                               | APPRENTICE   |
+| 2 ✅ | [JWT authentication bypass via flawed signature verification](JWT%20authentication%20bypass%20via%20flawed%20signature%20verification)                           | APPRENTICE   |
+| 3 ✅ | [JWT authentication bypass via weak signing key](JWT%20authentication%20bypass%20via%20weak%20signing%20key)                                                     | PRACTITIONER |
+| 4 ✅ | [JWT authentication bypass via jwk header injection](JWT%20authentication%20bypass%20via%20jwk%20header%20injection)                                             | PRACTITIONER |
+| 5 ✅ | [JWT authentication bypass via jku header injection](JWT%20authentication%20bypass%20via%20jku%20header%20injection)                                             | PRACTITIONER |
+| 6 ✅ | [JWT authentication bypass via kid header path traversal](JWT%20authentication%20bypass%20via%20kid%20header%20path%20traversal)                                 | PRACTITIONER |
+| 7 ✅ | [JWT authentication bypass via algorithm confusion](JWT%20authentication%20bypass%20via%20algorithm%20confusion)                                                 | EXPERT       |
+| 8    | [JWT authentication bypass via algorithm confusion with no exposed key](JWT%20authentication%20bypass%20via%20algorithm%20confusion%20with%20no%20exposed%20key) | EXPERT       |
 
 ## Introduction
 1. Structure of JWT
