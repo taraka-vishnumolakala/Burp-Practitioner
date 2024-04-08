@@ -3,10 +3,8 @@
 
 @import "{{ site.theme }}"; // Import the Hacker theme's styles
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
-
 // Add your custom styles here
 body {
-  font-family: 'Noto Sans Mono', sans-serif; // Change font family
-  font-size: 16px; // Change font size
+  font-family: 'Bitstream Vera Sans Mono'; // Change font family
+  font-size: 17px; // Change font size
 }
