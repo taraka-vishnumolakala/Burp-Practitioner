@@ -1,3 +1,7 @@
+### Disclaimer:
+
+> **This page serves as my preparation guide for the Burp Practitioner exam, featuring content inspired by and derived from Burp Suite Labs. It is intended for educational purposes only. For official and comprehensive documentation, please visit [PortSwigger - Web Security Academy](https://portswigger.net/web-security). This page is not affiliated with or endorsed by Burp Suite Labs.**
+
 # TOPICS
 
 ## Server Side Topics
@@ -54,6 +58,4 @@ Total Labs: 89
 | 26   | [Web LLM Attacks](Advanced-Topics/Web%20LLM%20Attacks/README)                         | 4          | 1          | 2            | 1      |
 | 27   | Essential skills                                                                      | 1          | N/A        | 1            | N/A    |
 
-### Disclaimer:
 
-> **This page serves as my preparation guide for the Burp Practitioner exam, featuring content inspired by and derived from Burp Suite Labs. It is intended for educational purposes only. For official and comprehensive documentation, please visit [PortSwigger - Web Security Academy](https://portswigger.net/web-security). This page is not affiliated with or endorsed by Burp Suite Labs.**
