@@ -1,0 +1,48 @@
+sequence-diagram
+
+title OAuth 2.0 Authorization Flow
+
+// Define actors with icons and colors
+User [icon: user, color: lightblue]
+Client [icon: monitor, color: orange]
+AuthorizationServer [icon: lock, color: red]
+ResourceServer [icon: database, color: green]
+
+// User initiates the flow
+User > Client: Request access to resource
+activate User
+
+// Client redirects User to Authorization Server with PKCE and state
+Client > AuthorizationServer: Redirect to auth URL
+activate Client
+AuthorizationServer > User: Auth page
+User > AuthorizationServer: Enter credentials and consent
+AuthorizationServer > Client: Authorization code + state
+deactivate AuthorizationServer
+
+// Client exchanges code for access token
+Client > AuthorizationServer: Exchange authorization_code for token
+activate AuthorizationServer
+opt [label: Validate PKCE and state, color: yellow] {
+  AuthorizationServer > Client: Access token + Refresh Token
+}
+deactivate AuthorizationServer
+
+// Client accesses protected resource
+Client > ResourceServer: Request resources using access_token
+activate ResourceServer
+ResourceServer > Client: Protected resource
+deactivate Client
+deactivate ResourceServer
+
+// Refresh token flow
+Client > AuthorizationServer: Request new access_token using refresh_token
+activate AuthorizationServer
+opt [label: Validate refresh token, color: yellow] {
+  AuthorizationServer > Client: New access_token + refresh_token
+}
+deactivate AuthorizationServer
+
+// End of flow
+deactivate User
+
