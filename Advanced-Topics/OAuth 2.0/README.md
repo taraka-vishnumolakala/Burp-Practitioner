@@ -10,10 +10,11 @@
 | 6 | Stealing OAuth access tokens via a proxy page | EXPERT |  |  |
 
 
+## What is OAuth ?
+- OAuth is an **Authorization Framework **that enables websites and web applications to request **limited access to a user's account** on another application.
+- Typically, OAuth allows the user to grant access without exposing the user's login credentials to the requesting application. 
 ## How does OAuth2.0 work ?
-![image.png](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___FyeP7PNpedQEMqM4S5sAc.png "image.png")
-
-
+![OAuth](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---O5UZ_B3-t9a6VZrKbA4zX---figure---ggHhh239px5IkJtpWUCjDw.png "OAuth")
 
 
 
