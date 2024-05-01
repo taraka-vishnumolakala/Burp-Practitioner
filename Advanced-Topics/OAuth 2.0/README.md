@@ -11,7 +11,9 @@
 
 
 ## How does OAuth2.0 work ?
-[﻿OAuth2.0 Flow](https://app.eraser.io/workspace/CKZ9W8XGguuGzUUoB4Eg?elements=wmNVTvuoF8qby1-VgXnB2w) 
+![image.png](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___FyeP7PNpedQEMqM4S5sAc.png "image.png")
+
+
 
 
 
