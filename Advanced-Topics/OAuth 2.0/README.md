@@ -10,30 +10,28 @@
 | 6 | Stealing OAuth access tokens via a proxy page | EXPERT |  |  |
 
 
-## What is OAuth ?
+# What is OAuth ?
 - OAuth is an **Authorization Framework **that enables websites and web applications to request **limited access to a user's account** on another application.
 - Typically, OAuth allows the user to grant access without exposing the user's login credentials to the requesting application. 
-## How does OAuth work ?
+# How does OAuth work ?
 
 
-![OAuth Flow](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---9jOtUIZ3ZBk6drFSue2zW---figure---HUpMv6AOvzOBZSBZA5dttQ.png "OAuth Flow")
+![OAuth Flow](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---wSoj5egs6wDDQhaXIhWsp---figure---HUpMv6AOvzOBZSBZA5dttQ.png "OAuth Flow")
 
 
 
 
 
-## Attacks and Mitigations
-### 1. Insufficient Redirect URI validation
+# Attacks and Mitigations
+## Insufficient Redirect URI validation
 Some authorization servers allow clients to register redirect URI patterns instead of complete redirect URIs. 
 
-
-
-#### 1.1 Redirect URI validation attacks on Authorization Code Grant
-##### Assumptions
-- Client registers with an redirect URL pattern `**https://*.somesite.example**`  with client ID `**s6BhdRkqt3**`. This would allow any subdomain of `**somesite.example**` to be a valid redirect URI for the client. 
+### Redirect URI validation attacks on Authorization Code Grant
+#### Assumptions
+- Client registers with an redirect URL pattern `https://*.somesite.example`  with client ID `s6BhdRkqt3`. This would allow any subdomain of `somesite.example` to be a valid redirect URI for the client. 
 > **NOTE: **A naive implementation of the authorization server, might interpret the wildcard ***** as "**any character**" and not "**any character valid for a domain name**". For example, the authorization server, might permit [﻿`https://attacker.example/.somesite.example`](https://attacker.example/)  as a valid redirect URI, although `attacker.example` is a different domain.
 
-##### Attack Scenario
+#### Attack Scenario
 - Attacker tricks the user into opening a tampered URL
 - Browser tries to render the attacker controlled malicious web page `https://www.evil.example` 
 - The malicious web page initiates an authorization request with a valid client ID `s6BhdRkqt3` 
@@ -49,17 +47,15 @@ Host: server.somesite.example
 - If the attacker impersonates a public client, the attacker can exchange the code for tokens at the respective token endpoint. 
 **NOTE: **The attack will not work as easily for confidential clients, since the code exchange requires authentication with the legitimate client's secret. The attacker cam, however use the legitimate confidential client to redeem the code by performing an authorization code injection attack. 
 
-![Redirect URL validation attacks on Authorization Code Grant](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---Rj-3jXBbBSBqjG-f_MTD9---figure---FgAhew-fJTqiU74zj4Ew0w.png "Redirect URL validation attacks on Authorization Code Grant")
+![Redirect URL validation attacks on Authorization Code Grant](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---i24pQPB_5nFUuWQichQsN---figure---FgAhew-fJTqiU74zj4Ew0w.png "Redirect URL validation attacks on Authorization Code Grant")
 
-
-
-#### 1.2 Redirect URI validation attacks on Implicit Grant
-##### Assumptions
-- The registered URL pattern for client `**s6BhdRkqt3**`  is `**https://client.somesite.example/cb?***` , allowing any parameter for redirects to `**https://client.somesite.example/cb**`.
-- The client endpoint supports a parameter `**redirect_to**` , which redirects the browser using an HTTP 303 Location header redirect.
-##### Attack Scenario
-- Attacker tricks the user into opening a malicious web URL `**https://www.evil.example**`.
-- The malicious website initiates an authorization request with a valid client ID `**s6BhdRkqt3**`  and adds an open redirector by encoding `**redirect_to=https://attacker.example**`  into the redirect URI parameters with response type "token".
+### Redirect URI validation attacks on Implicit Grant
+#### Assumptions
+- The registered URL pattern for client `s6BhdRkqt3`  is `https://client.somesite.example/cb?*` , allowing any parameter for redirects to `https://client.somesite.example/cb`.
+- The client endpoint supports a parameter `redirect_to` , which redirects the browser using an HTTP 303 Location header redirect.
+#### Attack Scenario
+- Attacker tricks the user into opening a malicious web URL `https://www.evil.example`.
+- The malicious website initiates an authorization request with a valid client ID `s6BhdRkqt3`  and adds an open redirector by encoding `redirect_to=https://attacker.example`  into the redirect URI parameters with response type "token".
 ```
 GET /authorize?response_type=token&state=9ad67f13
     &client_id=s6BhdRkqt3
@@ -75,13 +71,13 @@ Location: https://client.somesite.example/cb?
           redirect_to%3Dhttps%3A%2F%2Fattacker.example%2Fcb
           #access_token=2YotnFZFEjr1zCsicMWpAA&...
 ```
-- At `**client.somesite.example**` , the request arrives at the open redirector. The endpoint reads the redirect parameter and issues another HTTP 303 Location header redirect to the URL `**https://attacker.example/**` .
+- At `client.somesite.example` , the request arrives at the open redirector. The endpoint reads the redirect parameter and issues another HTTP 303 Location header redirect to the URL `https://attacker.example/` .
 ```
 HTTP/1.1 303 See Other
 Location: https://attacker.example/
 ```
-- However, browsers, as specified by **RFC 7231**, reattach the original fragment to the new URL if the `Location`  header in the redirect response doesn't contain a fragment. Consequently, the browser navigates to `**https://attacker.example/#access_token=2YotnFZFEjr1zCsicMWpAA...**` 
-![Redirect URI validation attacks on Implicit Grant](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---TsmWbck1meTKhyB94VYIz---figure---tIK4SB6f2KMaUY__kz6pQQ.png "Redirect URI validation attacks on Implicit Grant")
+- However, browsers, as specified by **RFC 7231**, reattach the original fragment to the new URL if the `Location`  header in the redirect response doesn't contain a fragment. Consequently, the browser navigates to `https://attacker.example/#access_token=2YotnFZFEjr1zCsicMWpAA...` 
+![Redirect URI validation attacks on Implicit Grant](/.eraser/CKZ9W8XGguuGzUUoB4Eg___DtAnWtIswaZrA5O4Cy5IZCcAYN53___---figure---0nO1M6hUYkUSRU9uQiy6k---figure---tIK4SB6f2KMaUY__kz6pQQ.png "Redirect URI validation attacks on Implicit Grant")
 
 
 
