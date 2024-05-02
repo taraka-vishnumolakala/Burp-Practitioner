@@ -1,0 +1,33 @@
+sequence-diagram
+
+title Redirect URI Validation Attacks on Authorization Code Grant
+colorMode bold
+
+// Actors
+User Browser [icon: user, color: blue]
+Attacker Page [icon: browser, color: red]
+Legitimate OAuth Server [icon: server, color: green]
+
+// Process
+User Browser > Attacker Page: 1. User is tricked into visiting a malicious URL
+activate User Browser
+Attacker Page > Legitimate OAuth Server: 2. Redirects to OAuth server with malicious redirect_uri
+opt [label: , color: blue] {
+  Legitimate OAuth Server > Legitimate OAuth Server: "compares to registered redirect URL Patterns for the client."
+}
+activate Attacker Page
+Legitimate OAuth Server > User Browser: 3. User consents, unaware of malicious redirect
+activate Legitimate OAuth Server
+
+alt [label: Redirect URI not validated, color: red] {
+  Legitimate OAuth Server > Attacker Page: 4a. Authorization code sent to attacker
+}
+
+alt [label: OAuth server detects mismatch, color: green] {
+  Legitimate OAuth Server > User Browser: 4b. Error message shown to user
+}
+
+deactivate User Browser
+deactivate Attacker Page
+deactivate Legitimate OAuth Server
+

@@ -1,0 +1,24 @@
+sequence-diagram
+
+title Redirect URI validation attacks on Implicit Grant
+colorMode bold
+
+// Define participants with icons
+User [icon: user-check, color: blue]
+Attacker  [label: "https://attacker.example", icon: user-x, color: red]
+Client [label: "https://client.somesite.example", icon: server, color: green]
+AuthorizationServer [label: "https://server.somesite.example",icon: server]
+
+
+// Sequence of interactions
+User > Attacker: Tricks to visit malicious URL
+opt [label: "initiates redirects to /authorize", color: red] {
+  Attacker > AuthorizationServer: redirect_uri param within url contains https:/client.somesite.example/cb?redirect_to=attacker.example
+}
+opt [label: "IF url pattern matches", color: red] {
+AuthorizationServer  > Client: "Sends access_token as a Fragment in a 303 redirect within Location Header"
+}
+opt [label: "Sends access token to attacker", color: red] {
+  Client > Attacker: "Reads the redirect parameter and issues another HTTP 303 with access_token within URL"
+}
+
